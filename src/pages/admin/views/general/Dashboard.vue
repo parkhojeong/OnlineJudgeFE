@@ -61,16 +61,30 @@
       </div>
       <panel style="margin-top: 5px">
         <span slot="title" v-loading="loadingReleases">Release Notes
-        <el-popover placement="right" trigger="hover">
+<!--        <el-popover placement="right" trigger="hover">
           <i slot="reference" class="el-icon-fa-question-circle import-user-icon"></i>
           <p>Please upgrade to the latest version to enjoy the new features. </p>
           <p>Reference: <a href="http://docs.onlinejudge.me/#/onlinejudge/guide/upgrade" target="_blank">
           http://docs.onlinejudge.me/#/onlinejudge/guide/upgrade</a>
           </p>
         </el-popover>
-        </span>
+ -->       </span>
 
-        <el-collapse v-model="activeNames" v-for="(release, index) of releases" :key="'release' + index">
+	<el-collapse>
+          <el-collapse-item :name="0">
+            <template slot="title">
+              <span>2023.07.07</span>
+            </template>
+            <p>Details: </p>
+            <div class="release-body">
+              <ul>
+                <li>KIRO & 스코프랩스: 온라인 저지 프로그램 런칭</li>
+              </ul>
+            </div>
+          </el-collapse-item>
+        </el-collapse>
+
+    <!--    <el-collapse v-model="activeNames" v-for="(release, index) of releases" :key="'release' + index">
           <el-collapse-item :name="index+1">
             <template slot="title">
               <div v-if="release.new_version">{{release.title}}
@@ -87,7 +101,7 @@
             </div>
           </el-collapse-item>
         </el-collapse>
-      </panel>
+    -->  </panel>
     </el-col>
   </el-row>
 </template>
